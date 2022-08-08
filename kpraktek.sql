@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 20 Jul 2022 pada 13.59
+-- Generation Time: 08 Agu 2022 pada 13.59
 -- Versi Server: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -19,6 +19,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `kpraktek`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `bacaan`
+--
+
+CREATE TABLE `bacaan` (
+  `id_bacaan` int(11) NOT NULL,
+  `judul_bacaan` varchar(250) NOT NULL,
+  `tanggal_bacaan` varchar(100) NOT NULL,
+  `bacaan` text NOT NULL,
+  `foto_bacaan` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `bacaan`
+--
+
+INSERT INTO `bacaan` (`id_bacaan`, `judul_bacaan`, `tanggal_bacaan`, `bacaan`, `foto_bacaan`) VALUES
+(2, 'Ngetes Judul Bacaannya Panjang, Gua Ga Tau Mau Ngetik Apa Di Sini, Tujuannya Bener-bener Cuma Mau Ngetes Doang Kalo Judulnya Bisa Panjang', '2022-08-27', '<p>Puji dan syukur saya panjatkan kehadirat Allah Yang Maha Esa,karena atas berkat dan rahmatnya, pelaksanaan kerja praktek yang berjudul <strong>“Perancangan Aplikasi Penggajian Karyawan Di Umkm Sempe Arumanis Haji Ardi Berbasis Website”</strong> dapat terselesaikan dengan baik dan tepat waktu. Adapun tujuan penulisan laporan ini adalah untuk memenuhi persyaratan dalam menyelesaikan kerja praktek program studi Informatika&nbsp; Universitas Janabadra Yogyakarta.</p><p>Penyusunan laporan ini tidak terlepas dari bantuan beberapa pihak oleh karena itu penulis ucapan terima kasih kepada:</p><ol><li>Bapak Dr. Ir. Edy Sriyono, M.T,<strong>&nbsp;</strong>selaku Rektor&nbsp;Universitas Janabadra.</li><li>Ibu&nbsp;Titiek Widyasari, S.T.,M.T, selaku Dekan Fakultas Teknik&nbsp;Universitas Janabadra.</li><li>Bapak Ryan Ari Setyawan, S.Kom.,M.Eng, selaku Ketua Program Studi Informatika&nbsp;Universitas Janabadra.</li><li>Bapak Jemmy Edwin B, S.Kom.,M.Eng, selaku dosen pembimbing kerja praktek</li><li>Semua pihak yang tidak dapat disebutkan satu persatu yang terlibat dalam penyusunan laporan kerja praktek ini sehingga dapat menyelesaikannya dengan baik.</li></ol><p>Akhir kata, penulis menyadari bahwa masih banyak kekurangan dalam penyusunan laporan kerja praktek ini, untuk itu penulis mohon maaf dan mengharapkan saran serta kritik yang membangun dari pembaca. Semoga laporan kerja praktek ini dapat bermanfaat bagi pembaca, khususnya pada bidang informatika.</p><p>&nbsp;</p><ol><li>Rumusan Masalah</li></ol><p>Berdasarkan latar belakang masalah diatas, maka dapat merumuskan masalah sebagai berikut Bagaimana merancang sistem penggajian serta pembuatan <i>web </i>sistem penggajian yang dapat membantu proses pengelolaan penggajian karyawan di UMKM Sempe Arumanis Haji Ardi.</p><ol><li>Batasan Masalah</li></ol><p>Adapun batasan masalah dalam penyusunan laporan kerja praktek ini adalah sebagai berikut:</p><ol><li>Data yang diinputkan dalam sistem penggajian karyawan berupa data karyawan, data kehadiran karyawan perbulan, dan data gaji karyawan.</li><li>Proses atau alur aplikasi penggajian ini mengikuti ketentuan yang sudah ditentukan oleh UMKM Sempe Arumanis Haji Ardi.</li><li>Informasi yang didapatkan oleh karyawan menggunakan web browser untuk melihat gaji dan data kehadiran perbulannya.</li><li>Proses dimana sistem yang akan dibangun menggunakan bahasa pemrograman <i>PHP</i> dan <i>MySQL</i>.<ol><li><strong>Tujuan Kerja Praktek</strong></li></ol></li></ol><p>Tujuan penelitian dalam penyusunan laporan kerja praktek ini adalah membangun aplikasi Penggajian Karyawan di UMKM Sempe Arumanis Haji Ardi berbasis <i>website</i> yang nantinya akan memudahkan <i>admin</i> dalam pengelolaan penggajian karyawan.</p><p>&nbsp;</p><ol><li><strong>Manfaat Kerja Praktek</strong></li></ol><p>Adapun manfaat dalam penyusunan laporan kerja praktek ini adalah sebagai berikut:</p><ol><li>Bagi Peneliti</li></ol><p>Menambah wawasan dan pengetahuan di luar lingkup kampus yang berhubungan dengan studi yang dipilih.</p><ol><li>Bagi Instansi<ol><li>Metodologi Kerja Praktek</li></ol></li></ol><p>Memiliki <i>website</i> pengelolaan data dan gaji karyawan sehingga memudahkan pihak UMKM Sempe Arumanis Haji Ardi dalam mengelola data tersebut.</p><p>Dalam menyelesaikan laporan kerja prektek ini penulis menggunakan beberapa metode kerja praktek:</p><ol><li>Lokasi Kerja Praktek</li></ol><p>Penelitian ini dilakukan mengamat pengelolaan data gaji karyawan pada UMKM Sempe Arumanis Haji Ardi di Babadan RT 05/36 Kadipolo Sendangtirto Berbah&nbsp;Sleman, Daerah Istimewa Yogyakarta</p><ol><li>Teknik Pengumpulan Data</li></ol><p>Teknik pengumpulan data dalam penelitian ini adalah dengan melakukan wawancara, observasi dan studi literature.</p><ol><li>Wawancara</li></ol><p>Wawancara dilakukan untuk mendapatkan informasi langsung dari sumbernya. Wawancara dilakukan dalam penelitian ini adalah dengan cara mengajukan pertanyaan langsung kepada sumber data yang bekerja di UMKM Sempe Arumanis Haji Ardi. Wawancara ini dilakukan kepada HRD UMKM Sempe Arumanis Haji Ardi.</p><ol><li>Observasi</li></ol><p>Observasi adalah pengamatan langsung bagaimana proses cara pengelolaan penggajian di UMKM sempe arumanis haji ardi.</p><ol><li>Studi Literatur</li></ol><p>Studi literature digunakan untuk mencari sumber pustaka yang berhubungan dengan topic penelitian. Diperoleh melalui buku referensi, internet dan dokumentasi lainnya.</p>', '27037.jpg'),
+(5, 'Yogyakarta, Kota Idaman', '2022-08-25', '<p>Yogyakarta atau dikenal oleh masyarakat setempat dengan nama Kota Jogja atau Kota Yogya adalah ibu kota dan pusat pemerintahan Provinsi Daerah Istimewa Yogyakarta, Indonesia. Kota ini adalah kota besar yang mempertahankan konsep tradisional dan budaya Jawa. Kota Yogyakarta adalah kediaman bagi Sultan Hamengkubuwana dan Adipati Paku Alam. Kota Yogyakarta merupakan salah satu kota terbesar di Indonesia dan kota terbesar keempat di Pulau Jawa bagian selatan menurut jumlah penduduk. Kota Yogyakarta juga pernah menjadi ibu kota RI pada tahun 1946.</p><p>&nbsp;</p><p>Salah satu kecamatan di Yogyakarta, yaitu Kotagede pernah menjadi pusat Kesultanan Mataram antara kurun tahun 1575 – 1640. Keraton (istana) yang masih berfungsi dalam arti yang sesungguhnya adalah Keraton Ngayogyakarta dan Puro Paku Alaman, yang merupakan pecahan&nbsp;dari Kesultanan Mataram. Pada masa revolusi, Yogyakarta juga pernah menjadi ibu kota Indonesia antara tahun 1946 hingga 1950</p>', 'Yogyakarta_Indonesia_Tugu-Yogyakarta-02.jpg');
 
 -- --------------------------------------------------------
 
@@ -46,37 +68,6 @@ INSERT INTO `bahan_jamu` (`id`, `arah`, `isi`, `foto`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `home`
---
-
-CREATE TABLE `home` (
-  `id` int(11) NOT NULL,
-  `link_youtube` varchar(250) NOT NULL,
-  `teks_tengah_atas` text NOT NULL,
-  `gambar_kanan_atas` varchar(250) NOT NULL,
-  `teks_kanan_atas` text NOT NULL,
-  `teks_kanan_atas_bawahnya` text NOT NULL,
-  `gambar_kiri1` varchar(250) NOT NULL,
-  `teks_kiri1` text NOT NULL,
-  `gambar_kanan1` varchar(250) NOT NULL,
-  `teks_kanan1` text NOT NULL,
-  `gambar_kiri2` varchar(250) NOT NULL,
-  `teks_kiri2` text NOT NULL,
-  `gambar_kanan2` varchar(250) NOT NULL,
-  `teks_kanan2` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data untuk tabel `home`
---
-
-INSERT INTO `home` (`id`, `link_youtube`, `teks_tengah_atas`, `gambar_kanan_atas`, `teks_kanan_atas`, `teks_kanan_atas_bawahnya`, `gambar_kiri1`, `teks_kiri1`, `gambar_kanan1`, `teks_kanan1`, `gambar_kiri2`, `teks_kiri2`, `gambar_kanan2`, `teks_kanan2`) VALUES
-(1, 'tes', 'tes', 'tes', 'tes', 'tes', 'tes', 'tes', 'tes', 'tes', 'tes', 'tes', 'tes', 'tes'),
-(2, '', '', '', '', '', '', '', '', '', '', '', '', '');
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `kategori`
 --
 
@@ -90,8 +81,8 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
-(19, 'Botol Besar'),
-(20, 'Botol Kecil');
+(19, 'Botol Kemasan Premium'),
+(20, 'Botol Kemasan Reguler');
 
 -- --------------------------------------------------------
 
@@ -147,19 +138,19 @@ CREATE TABLE `produk` (
   `id_produk` int(15) NOT NULL,
   `nama_produk` varchar(40) NOT NULL,
   `id_kategori` int(15) NOT NULL,
-  `harga_produk` int(30) NOT NULL,
   `foto_produk` varchar(300) NOT NULL,
-  `deskripsi_produk` text NOT NULL
+  `deskripsi_produk` text NOT NULL,
+  `link_produk` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `produk`
 --
 
-INSERT INTO `produk` (`id_produk`, `nama_produk`, `id_kategori`, `harga_produk`, `foto_produk`, `deskripsi_produk`) VALUES
-(51, 'Beras Kencur', 20, 5500, '177877613_821739291765619_8822815395932566505_n.jpg', 'Beras Kencur botol kecil berukuran 250 ml'),
-(52, 'Kunir Asem', 20, 5500, '15043653_1840425849508833_9063272844519014400_n.jpg', 'Kunir Asem botol kecil berukuran 250 ml'),
-(53, 'Gula Asem', 20, 5500, '30076687_1449874171785792_2100068441707773952_n.jpg', 'Gula Asem botol kecil berukuran 250 ml');
+INSERT INTO `produk` (`id_produk`, `nama_produk`, `id_kategori`, `foto_produk`, `deskripsi_produk`, `link_produk`) VALUES
+(51, 'Beras Kencur', 19, '177877613_821739291765619_8822815395932566505_n.jpg', 'Beras Kencur botol kecil berukuran 250 ml', 'https://lummoshop.com/mujamupremio0/products/BER-001/beras-kencur-premium-250ml?position=4'),
+(52, 'Kunir Asem', 20, '15043653_1840425849508833_9063272844519014400_n.jpg', 'Kunir Asem botol kecil berukuran 250 ml', 'https://lummoshop.com/mujamupremio0/products/KUN-002/kunyit-asam-330ml?position=5'),
+(53, 'Gula Asem', 19, '30076687_1449874171785792_2100068441707773952_n.jpg', 'Gula Asem botol kecil berukuran 250 ml', 'https://lummoshop.com/mujamupremio0/products/GUL-001/gula-asam-premium-250ml?position=2');
 
 -- --------------------------------------------------------
 
@@ -181,7 +172,7 @@ CREATE TABLE `tentang` (
 --
 
 INSERT INTO `tentang` (`id_toko`, `tentang_toko`, `alamat`, `no_tlp`, `maps`, `foto`) VALUES
-(13, 'Toko Jamu Tradisional Namun Modern', 'Jetis	', '6285745333882', '		<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15813.747653595932!2d110.3904599!3d-7.743394400000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5ed11ec9aa17%3A0x5b16c2b54fcaa223!2sPondok%20Makan%20Pelem%20Golek!5e0!3m2!1sid!2sid!4v1644222995024!5m2!1sid!2sid\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3954.6057774610863!2d110.3073806!3d-7.6178022!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a8bf67febc4cb%3A0x1f4c91a8998747f8!2sLumintu%20Gallery!5e0!3m2!1sid!2sid!4v1582636892810!5m2!1sid!2sid\" width=\"600\" height=\"450\" frameborder=\"0\" styl');
+(13, 'Toko Jamu Tradisional Namun Modern', 'Jetis	', '085745333882', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d51355.173896557324!2d110.17010271030708!3d-7.318746053969426!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e707879e0b75855%3A0x1296f14debc4699c!2sRSUD%20Temanggung!5e0!3m2!1sid!2sid!4v1659442001127!5m2!1sid!2sid\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', 'mujamu.png');
 
 -- --------------------------------------------------------
 
@@ -206,24 +197,25 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `level`, `nama_lengkap`, `foto_admin`, `email`, `no_hp`, `alamat`) VALUES
-(10, 'admin', 'admin', 'admin', NULL, NULL, NULL, NULL, NULL),
-(11, 'karyawan', 'karyawan', 'karyawan', NULL, NULL, NULL, NULL, NULL),
-(12, 'cs', 'cs', 'cs', NULL, NULL, NULL, NULL, NULL);
+(10, 'admin', 'admin', 'admin', 'Musthafa Zaki Ganteng', 'pngwing.com.png', 'mzpasha68@gmail.com', '69696969696969', 'wkwkwkwkwk'),
+(11, 'karyawan', 'karyawan', 'karyawan', 'Musthafa Zaki', '20200908_111646.jpg', 'admin@admin.com', '69696969696969', 'wkwkwwkwkw'),
+(12, 'cs', 'cs', 'cs', 'muke gile', '20210413_183446.jpg', 'mzpasha68@gmail.com', '0888', 'vvefvevevrev'),
+(22, 'karyawanatas', 'karyawan1', 'karyawan', 'Musthafa Zaki Ganteng', 'mujamu.png', 'rozak.tkj@gmail.com', '0987654321', 'nvhsjcnshafdfsv');
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `bacaan`
+--
+ALTER TABLE `bacaan`
+  ADD PRIMARY KEY (`id_bacaan`);
+
+--
 -- Indexes for table `bahan_jamu`
 --
 ALTER TABLE `bahan_jamu`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `home`
---
-ALTER TABLE `home`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -267,20 +259,20 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `bacaan`
+--
+ALTER TABLE `bacaan`
+  MODIFY `id_bacaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
 -- AUTO_INCREMENT for table `bahan_jamu`
 --
 ALTER TABLE `bahan_jamu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
---
--- AUTO_INCREMENT for table `home`
---
-ALTER TABLE `home`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_kategori` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `link_youtube`
 --
@@ -295,7 +287,7 @@ ALTER TABLE `pesan`
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id_produk` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 --
 -- AUTO_INCREMENT for table `tentang`
 --
@@ -305,7 +297,7 @@ ALTER TABLE `tentang`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_user` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
